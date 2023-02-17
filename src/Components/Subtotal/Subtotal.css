@@ -1,0 +1,29 @@
+.subtotal {
+  display: flex;
+  max-width: 600px;
+  align-items: center;
+  border: 1px solid rgb(116, 115, 115);
+  border-radius: 10px;
+  padding: 10px;
+  background-color: white;
+}
+
+.subtotal__info {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.subtotal__currency{
+    position: relative;
+    top: 5px;
+}
+
+.subtotal > button {
+  padding: 5px;
+  font-size: 15px;
+  background-color: #f0c14b;
+  border: 1px solid;
+  border-radius: 5px;
+  margin-left: 10px;
+}

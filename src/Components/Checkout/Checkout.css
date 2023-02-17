@@ -1,0 +1,17 @@
+.checkout {
+  margin: 10px;
+}
+
+.checkout__title {
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgb(170, 174, 178);
+}
+
+.checkout__subtotal{
+    display: flex;
+    justify-content: center;
+}
+
+.checkout__subtotal, .checkout__terms{
+    margin: 20px;
+}
