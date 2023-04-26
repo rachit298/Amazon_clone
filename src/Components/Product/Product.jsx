@@ -2,8 +2,23 @@ import React from "react";
 import "./Product.css";
 import StarIcon from "@mui/icons-material/Star";
 import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
+import { useStateValue } from "../../StateProvider/StateProvider";
 
 function Product(props) {
+  const [{ basket }, dispatch] = useStateValue();
+
+  function addToBasket() {
+    dispatch({
+      type: "ADD_TO_BASKET",
+      item: {
+        id: props.id,
+        title: props.title,
+        image: props.image,
+        price: props.price,
+        rating: props.rating,
+      },
+    });
+  }
   
   return (
     <div className="product">
