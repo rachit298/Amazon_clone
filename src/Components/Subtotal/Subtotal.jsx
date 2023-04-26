@@ -1,6 +1,7 @@
 import React from "react";
 import "./Subtotal.css";
 import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
+import { useStateValue } from "../../StateProvider/StateProvider";
 
 function Subtotal() {
   const [{ basket }] = useStateValue();
