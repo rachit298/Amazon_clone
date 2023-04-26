@@ -3,6 +3,14 @@ import "./Subtotal.css";
 import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
 
 function Subtotal() {
+  const [{ basket }] = useStateValue();
+
+  const total = basket?.reduce((amount, item) => {
+    let str = item.price.replaceAll(",", "");
+    let num = Number(str);
+    return amount + num;
+  }, 0);
+  
   return (
     <div className="subtotal">
       <p className="subtotal__info">
