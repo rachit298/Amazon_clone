@@ -3,22 +3,27 @@ import "./Product.css";
 import StarIcon from "@mui/icons-material/Star";
 import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
 import { useStateValue } from "../../StateProvider/StateProvider";
+import { useNavigate } from "react-router-dom";
 
 function Product(props) {
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket, user }, dispatch] = useStateValue();
 
+  const navigate = useNavigate();
+  
   function addToBasket() {
-    dispatch({
-      type: "ADD_TO_BASKET",
-      item: {
-        id: props.id,
-        title: props.title,
-        image: props.image,
-        price: props.price,
-        rating: props.rating,
-        review: props.review,
-      },
-    });
+    user
+      ? dispatch({
+          type: "ADD_TO_BASKET",
+          item: {
+            id: props.id,
+            title: props.title,
+            image: props.image,
+            price: props.price,
+            rating: props.rating,
+            review: props.review,
+          },
+        })
+      : navigate("./login");
   }
   
   return (
