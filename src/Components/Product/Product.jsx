@@ -16,6 +16,7 @@ function Product(props) {
         image: props.image,
         price: props.price,
         rating: props.rating,
+        review: props.review,
       },
     });
   }
